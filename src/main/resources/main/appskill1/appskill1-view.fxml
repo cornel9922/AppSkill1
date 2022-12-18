@@ -13,13 +13,13 @@
    <children>
       <AnchorPane layoutY="98.0" prefHeight="303.0" prefWidth="700.0" style="-fx-background-color: white;">
          <children>
-            <TextField layoutX="200.0" layoutY="84.0" prefHeight="38.0" prefWidth="298.0" promptText="Login" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
-            <PasswordField layoutX="200.0" layoutY="141.0" prefHeight="38.0" prefWidth="298.0" promptText="Password" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;">
+            <TextField fx:id="logIn_field" layoutX="200.0" layoutY="84.0" prefHeight="38.0" prefWidth="298.0" promptText="Login" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <PasswordField fx:id="password_field" layoutX="200.0" layoutY="141.0" prefHeight="38.0" prefWidth="298.0" promptText="Password" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </PasswordField>
-            <Button fx:id="SignIn_button" layoutX="314.0" layoutY="204.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #f39c63;" text="Start!">
+            <Button fx:id="signIn_button" layoutX="314.0" layoutY="204.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #f39c63;" text="Start!">
                <font>
                   <Font size="17.0" />
                </font>
@@ -36,7 +36,7 @@
             <Font name="Arial Bold Italic" size="51.0" />
          </font>
       </Text>
-      <Button fx:id="SignUp_button" layoutX="608.0" layoutY="34.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #f39c63;" text="SignUp" textFill="WHITE">
+      <Button fx:id="signUp_button" layoutX="608.0" layoutY="34.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #f39c63;" text="SignUp" textFill="WHITE">
          <font>
             <Font name="Arial Bold Italic" size="11.0" />
          </font>

@@ -8,6 +8,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -21,10 +24,16 @@ public class MainController {
     private URL location;
 
     @FXML
-    private Button SignIn_button;
+    private TextField logIn_field;
 
     @FXML
-    private Button SignUp_button;
+    private PasswordField password_field;
+
+    @FXML
+    private Button signIn_button;
+
+    @FXML
+    private Button signUp_button;
 
     @FXML
     private Text joke_text_main;
@@ -40,11 +49,11 @@ public class MainController {
 
     @FXML
     void initialize() {
-        SignIn_button.setOnAction(actionEvent -> {
-            openNewScene(SignIn_button,"Home-view.fxml");
+        signIn_button.setOnAction(actionEvent -> {
+            openNewScene(signIn_button,"Home-view.fxml");
         });
-        SignUp_button.setOnAction(actionEvent -> {
-            openNewScene(SignUp_button, "signUp-view.fxml");
+        signUp_button.setOnAction(actionEvent -> {
+            openNewScene(signUp_button, "signUp-view.fxml");
         });
     }
 
@@ -60,6 +69,9 @@ public class MainController {
         }
         Parent root = loader.getRoot();
         Stage stage = new Stage();
+        stage.getIcons().add(new Image("C:\\Users\\Cornel\\IdeaProjects\\AppSkill1\\src\\main\\resources\\images\\app_image.png"));
+        stage.setTitle("CornelApp");
+        stage.setResizable(false);
         stage.setScene(new Scene(root));
         stage.showAndWait();
 

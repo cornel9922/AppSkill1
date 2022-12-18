@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -13,28 +14,31 @@
    <children>
       <AnchorPane layoutY="98.0" prefHeight="303.0" prefWidth="700.0" style="-fx-background-color: white;">
          <children>
-            <TextField layoutX="14.0" layoutY="73.0" prefHeight="38.0" prefWidth="298.0" promptText="Login" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
-            <PasswordField layoutX="14.0" layoutY="132.0" prefHeight="38.0" prefWidth="298.0" promptText="Password" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;">
+            <TextField fx:id="login_field" layoutX="14.0" layoutY="54.0" prefHeight="38.0" prefWidth="298.0" promptText="Login" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <PasswordField fx:id="password_field" layoutX="14.0" layoutY="113.0" prefHeight="38.0" prefWidth="298.0" promptText="Password" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </PasswordField>
-            <Button fx:id="SignIn_button" layoutX="305.0" layoutY="240.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: #f39c63;" text="SignUp">
+            <Button fx:id="signUp_button" layoutX="305.0" layoutY="240.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: #f39c63;" text="SignUp">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Text fill="#c4c4c4" layoutX="196.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creating new account">
+            <Text fill="#c4c4c4" layoutX="196.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creating new account">
                <font>
                   <Font name="Arial Bold Italic" size="30.0" />
                </font>
             </Text>
-            <TextField layoutX="395.0" layoutY="73.0" prefHeight="38.0" prefWidth="298.0" promptText="Firstname" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
-            <TextField layoutX="395.0" layoutY="132.0" prefHeight="38.0" prefWidth="298.0" promptText="LastName" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
-            <TextField layoutX="203.0" layoutY="191.0" prefHeight="38.0" prefWidth="298.0" promptText="E-mail" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <TextField fx:id="firstName_field" layoutX="395.0" layoutY="54.0" prefHeight="38.0" prefWidth="298.0" promptText="Firstname" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <TextField fx:id="lastName_field" layoutX="395.0" layoutY="113.0" prefHeight="38.0" prefWidth="298.0" promptText="LastName" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <TextField fx:id="email_field" layoutX="14.0" layoutY="172.0" prefHeight="38.0" prefWidth="298.0" promptText="E-mail" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <TextField fx:id="location_field" layoutX="395.0" layoutY="172.0" prefHeight="38.0" prefWidth="298.0" promptText="Location" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <CheckBox fx:id="gender_box1" layoutX="34.0" layoutY="240.0" mnemonicParsing="false" onAction="#onGenderBox1_click" selected="true" text="Male" />
+            <CheckBox fx:id="gender_box2" layoutX="151.0" layoutY="240.0" mnemonicParsing="false" onAction="#onGenderBox2_click" text="Female" />
          </children>
       </AnchorPane>
-      <Text fill="WHITE" layoutX="247.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="itProger" wrappingWidth="206.13668823242188">
+      <Text fill="WHITE" layoutX="262.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="itProger" wrappingWidth="206.13668823242188">
          <font>
             <Font name="Arial Bold Italic" size="51.0" />
          </font>
