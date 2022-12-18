@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.appskill1.HomeController">
+   <children>
+      <AnchorPane layoutY="98.0" prefHeight="303.0" prefWidth="700.0" style="-fx-background-color: white;">
+         <children>
+            <Text fill="#c4c4c4" layoutX="234.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Good day, User!">
+               <font>
+                  <Font name="Arial Bold Italic" size="30.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/stayhome.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Text fill="WHITE" layoutX="262.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="itProger" wrappingWidth="206.13668823242188">
+         <font>
+            <Font name="Arial Bold Italic" size="51.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="67.0" fitWidth="70.0" layoutX="23.0" layoutY="16.0" onMouseClicked="#onImageClick" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/share.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="joke_text_main" fill="WHITE" layoutX="22.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="7.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
