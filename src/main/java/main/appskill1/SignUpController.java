@@ -20,9 +20,6 @@ public class SignUpController {
     private URL location;
 
     @FXML
-    private TextField email_field;
-
-    @FXML
     private TextField firstName_field;
 
     @FXML
@@ -68,9 +65,29 @@ public class SignUpController {
     }
     @FXML
     void initialize() {
-        signUp_button.setOnAction(actionEvent ->  {
+
+        signUp_button.setOnAction(actionEvent -> {
+            signUpNewUser();
             new MainController().openNewScene(signUp_button, "appskill1-view.fxml");
         });
+    }
+
+    private void signUpNewUser() {
+        DatabaseHandler dbhandler = new DatabaseHandler();
+        String firstName = firstName_field.getText();
+        String lastName = lastName_field.getText();
+        String userName = login_field.getText();
+        String password = password_field.getText();
+        String location = location_field.getText();
+        String gender;
+        if(gender_box1.isSelected()) gender = "Male";
+        else gender = "Female";
+
+        User user = new User(firstName,lastName,userName,password,location,gender);
+
+
+        dbhandler.signUpUser(user);
+
     }
 
 }

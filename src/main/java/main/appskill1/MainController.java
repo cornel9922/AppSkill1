@@ -50,11 +50,21 @@ public class MainController {
     @FXML
     void initialize() {
         signIn_button.setOnAction(actionEvent -> {
-            openNewScene(signIn_button,"Home-view.fxml");
+            String loginText = logIn_field.getText().trim();
+            String loginPassword = password_field.getText().trim();
+
+            if(!loginText.equals("") && !password_field.equals("")) {
+                loginUser(loginText, loginPassword);}
+            else System.out.println("login or password is wrong");
+
         });
         signUp_button.setOnAction(actionEvent -> {
             openNewScene(signUp_button, "signUp-view.fxml");
         });
+    }
+
+    private void loginUser(String loginText, String loginPassword) {
+
     }
 
     public void openNewScene(Button button, String window) {
@@ -73,7 +83,7 @@ public class MainController {
         stage.setTitle("CornelApp");
         stage.setResizable(false);
         stage.setScene(new Scene(root));
-        stage.showAndWait();
+        stage.show();
 
     }
 
