@@ -2,6 +2,8 @@ package main.appskill1;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -49,21 +51,46 @@ public class MainController {
 
     @FXML
     void initialize() {
+
+        signUp_button.setOnAction(actionEvent -> {
+            openNewScene(signUp_button, "signUp-view.fxml");
+        });
+
         signIn_button.setOnAction(actionEvent -> {
             String loginText = logIn_field.getText().trim();
             String loginPassword = password_field.getText().trim();
 
-            if(!loginText.equals("") && !password_field.equals("")) {
-                loginUser(loginText, loginPassword);}
-            else System.out.println("login or password is wrong");
+            if(!loginText.equals("") && !loginPassword.equals(""))
+                loginUser(loginText, loginPassword);
+            else
+                System.out.println("login or password is wrong");
 
         });
-        signUp_button.setOnAction(actionEvent -> {
-            openNewScene(signUp_button, "signUp-view.fxml");
-        });
+
     }
 
     private void loginUser(String loginText, String loginPassword) {
+        DatabaseHandler dbHandler = new DatabaseHandler();
+        User user = new User();
+        user.setUserName(loginText);
+        user.setPassword(loginPassword);
+        ResultSet result = dbHandler.getUser(user);
+
+        int counter = 0;
+
+        while(true) {
+            try {
+                if (!result.next()) break;
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            counter++;
+        }
+
+        if (counter >= 1) {
+            openNewScene(signIn_button, "Home-view.fxml");
+        }
+        else System.out.println("Wrong login or password");
 
     }
 
